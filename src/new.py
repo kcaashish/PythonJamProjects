@@ -62,7 +62,7 @@ def testFlow(f_in, f_out, r, H, h, t_max, t_open):
 
 
 # volumes, heights, times = testFlow(1, 1, 1, 10, 0, 3, 1)
-volumes, heights, times =  testFlow(1, 5, 1, 10, 0, 5, 2)
+volumes, heights, times = testFlow(1, 5, 1, 10, 0, 5, 2)
 # volumes, heights, times = testFlow(1, 0.5, 1, 10, 0, 3, 1)
 
 print("Volumes = {}".format(volumes))
