@@ -78,9 +78,9 @@ def microcar(expectedList, actualList):
 
 if __name__ == '__main__':
     expectedFiles = ["data/expected1.csv", "data/expected2.csv"]
-    actalFiles = ["data/actual1.csv", "data/actual2.csv"]
+    actualFiles = ["data/actual1.csv", "data/actual2.csv"]
 
-    a1, a2, a3, a4, a5, a6 = microcar(expectedFiles, actalFiles)
+    a1, a2, a3, a4, a5, a6 = microcar(expectedFiles, actualFiles)
     print(a1)
     print(a2)
     print(a3)
