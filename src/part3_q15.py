@@ -15,8 +15,8 @@ def geometry(theta1, theta2, l1, l2):
     plt.plot(xPts, yPts, color='black', lw='3')
     plt.axis()
     plt.title("Question 15")
-    plt.xlabel(r'x-axis')
-    plt.ylabel(r'y-axis')
+    plt.xlabel("X-axis")
+    plt.ylabel("Y-axis")
     plt.show()
     end2array = np.array([round(x3, 2), round(y3, 2)])
     return end2array
