@@ -14,6 +14,7 @@ def geometry(theta1, theta2, l1, l2):
 
     plt.plot(xPts, yPts, color='black', lw='3')
     plt.axis()
+    plt.title("Question 15")
     plt.xlabel(r'x-axis')
     plt.ylabel(r'y-axis')
     plt.show()
