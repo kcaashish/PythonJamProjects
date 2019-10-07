@@ -20,7 +20,6 @@ def spiral(a, b, h, n):
         x_pts.append(round(x, 2))
         y_pts.append(round(y, 2))
         z_pts.append(round(z, 2))
-        print(z_pts)
 
     fig = plt.figure()
     ax = Axes3D(fig)
