@@ -35,4 +35,4 @@ def populationgrowth(fileName, n, r, h, t):
 
 
 if __name__ == '__main__':
-    populationgrowth('organisms.txt', 100, 1.4, 6.0, 14.0)
+    populationgrowth('organism.txt', 100, 1.4, 6.0, 14.0)
