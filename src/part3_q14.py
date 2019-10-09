@@ -1,4 +1,12 @@
-# What the function does:
+'''What the function does: First the function makes
+a numpy array of angles from 0 to 2pi with increment of
+pi/3. It takes angle input for users in the form of degree,
+converts the angle into radian and adds it to each of the angles
+in the initial numpy array to give an angles_offset array. Then,
+two new arrays are made that hold the sine and cosine values of
+angles in angles_offset array. Finally, the sine values are plotted
+as function of cosine values, i.e. as plt.plot(cosines, sines).
+'''
 # Author:
 # Date:
 
