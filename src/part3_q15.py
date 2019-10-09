@@ -7,7 +7,7 @@ def geometry(theta1, theta2, l1, l2):
 
     [x2, y2] = [x1 + l1 * np.cos(theta1), y1 + l1 * np.sin(theta1)]
 
-    [x3, y3] = [x2 + l2 * np.cos(theta2), y2 + l2 * np.sin(theta2)]
+    [x3, y3] = [x2 + l2 * np.cos(theta1 + theta2), y2 + l2 * np.sin(theta1 + theta2)]
 
     xPts = [x1, x2, x3]
     yPts = [y1, y2, y3]
