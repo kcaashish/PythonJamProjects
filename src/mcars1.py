@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
+plt.style.use("ggplot")
 
 
 def microcar(expectedList, actualList):
@@ -89,8 +90,8 @@ def plotmicrocar(expectedList, actualList):
     x_indexes = np.arange(len(microcars))
     width = 0.25
 
-    ax1.bar(x_indexes - width, expDist, width=width, color="b", label="Expected")
-    ax1.bar(x_indexes, actDist, width=width, color="k", label="Actual")
+    ax1.bar(x_indexes - width, expDist, width=width, color="#3498DB", label="Expected")
+    ax1.bar(x_indexes, actDist, width=width, color="#154360", label="Actual")
     ax1.set_xticks(ticks=x_indexes - width/2)
     ax1.set_xticklabels(labels=microcars)
     ax1.set_xlabel("mCar")
@@ -105,21 +106,21 @@ def plotmicrocar(expectedList, actualList):
         microcar1.append(mic1)
         microcar2.append(mic2)
 
-    ax2.scatter(expHorDisp[0], expVerDisp[0], s=100, c='blue', label='Microcar 1')
-    ax2.scatter(expHorDisp[1], expVerDisp[1], s=100, c='orange', label='Microcar 2')
+    ax2.scatter(expHorDisp[0], expVerDisp[0], s=100, c='#A93226', label='mcar1')
+    ax2.scatter(expHorDisp[1], expVerDisp[1], s=100, c='#0E6655', label='mcar2')
     ax2.set_xticks(np.arange(-50, 400, 50))
     ax2.set_yticks(np.arange(-50, 400, 50))
     ax2.set_title("Expected")
-    ax2.set_xlabel("x Displacement")
+    ax2.set_xlabel("x Disp (m)")
     ax2.set_ylabel("y Disp (m)")
     ax2.legend()
 
-    ax3.scatter(actHorDisp[0], actVerDisp[0], s=100, c='blue', marker='X', label='Microcar 1')
-    ax3.scatter(actHorDisp[1], actVerDisp[1], s=100, c='orange', marker='X', label='Microcar 2')
+    ax3.scatter(actHorDisp[0], actVerDisp[0], s=100, c='#A93226', marker='X', label='mcar1')
+    ax3.scatter(actHorDisp[1], actVerDisp[1], s=100, c='#0E6655', marker='X', label='mcar2')
     ax3.set_xticks(np.arange(-50, 400, 50))
     ax3.set_yticks(np.arange(-50, 400, 50))
     ax3.set_title("Actual")
-    ax3.set_xlabel("x Displacement")
+    ax3.set_xlabel("x Disp (m)")
     ax3.set_ylabel("y Disp (m)")
     ax3.legend()
 
