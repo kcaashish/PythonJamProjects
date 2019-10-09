@@ -2,7 +2,6 @@ import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
 import csv
-import math
 
 
 def microcar(expectedList, actualList):
@@ -48,8 +47,8 @@ def microcar(expectedList, actualList):
             # ln_counts.append(lnc)
         actuallist.append([round(d, 2), round(dx, 2), round(dy, 2)])
 
-    print(indices[0])
-    print(ln_counts[0])
+    # print(indices[0])
+    # print(ln_counts[0])
 
     for csvFile in expectedList:
 
@@ -110,9 +109,7 @@ def microcar(expectedList, actualList):
             #         line_count += 1
             for row in csv_reader:
                 if expectedList.index(csvFile) == ind:
-                    print(csvFile)
                     if line_count == lnc:
-                        print(line_count)
                         line_count += 1
                         continue
 
@@ -165,14 +162,62 @@ def microcar(expectedList, actualList):
     return returnable_list
 
 
-expDist, expHorDisp, expVerDisp, actDist, actHorDisp, actVerDisp = microcar(['data/expected1.csv', 'data/expected2.csv'], ['data/actual1.csv', 'data/actual2.csv'])
-print(microcar(['data/expected1.csv', 'data/expected2.csv'], ['data/actual1.csv', 'data/actual2.csv']))
-print(expHorDisp)
-print(expVerDisp)
-print(actHorDisp)
-print(actVerDisp)
-print(expDist)
-print(actDist)
+def plotmicrocar(expectedList, actualList):
+    expDist, expHorDisp, expVerDisp, actDist, actHorDisp, actVerDisp = microcar(expectedList, actualList)
+
+    fig = plt.figure()
+    ax1 = fig.add_subplot(2, 1, 1)
+    ax2 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(2, 2, 4)
+
+    microcars = [1, 2]
+    x_indexes = np.arange(len(microcars))
+    width = 0.25
+
+    ax1.bar(x_indexes - width, expDist, width=width, color="b", label="Expected")
+    ax1.bar(x_indexes, actDist, width=width, color="k", label="Actual")
+    ax1.set_xticks(ticks=x_indexes - width/2)
+    ax1.set_xticklabels(labels=microcars)
+    ax1.set_xlabel("mCar")
+    ax1.set_ylabel("Dist")
+    ax1.set_title("Distance")
+    ax1.legend()
+
+    microcar1 = list()
+    microcar2 = list()
+
+    for mic1, mic2 in zip(expHorDisp, expVerDisp):
+        microcar1.append(mic1)
+        microcar2.append(mic2)
+
+    ax2.scatter(expHorDisp[0], expVerDisp[0], s=100, c='blue', label='Microcar 1')
+    ax2.scatter(expHorDisp[1], expVerDisp[1], s=100, c='orange', label='Microcar 2')
+    ax2.set_xticks(np.arange(-50, 400, 50))
+    ax2.set_yticks(np.arange(-50, 400, 50))
+    ax2.set_title("Expected")
+    ax2.set_xlabel("x Displacement")
+    ax2.set_ylabel("y Disp (m)")
+    ax2.legend()
+
+    ax3.scatter(actHorDisp[0], actVerDisp[0], s=100, c='blue', marker='X', label='Microcar 1')
+    ax3.scatter(actHorDisp[1], actVerDisp[1], s=100, c='orange', marker='X', label='Microcar 2')
+    ax3.set_xticks(np.arange(-50, 400, 50))
+    ax3.set_yticks(np.arange(-50, 400, 50))
+    ax3.set_title("Actual")
+    ax3.set_xlabel("x Displacement")
+    ax3.set_ylabel("y Disp (m)")
+    ax3.legend()
+
+    fig.tight_layout()
+    plt.show()
 
 
-# def plotmicrocar():
+if __name__ == '__main__':
+    expDist, expHorDisp, expVerDisp, actDist, actHorDisp, actVerDisp = microcar(['data/expected1.csv', 'data/expected2.csv'], ['data/actual1.csv', 'data/actual2.csv'])
+    print(expHorDisp)
+    print(expVerDisp)
+    print(actHorDisp)
+    print(actVerDisp)
+    print(expDist)
+    print(actDist)
+    plotmicrocar(['data/expected1.csv', 'data/expected2.csv'], ['data/actual1.csv', 'data/actual2.csv'])
