@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 
 def monteCarloPi(trials):
+    # trials = int(input("Enter the number of trials:"))
     trial_list = list(range(1, trials + 1))
     circle_points = 0
     square_points = 0
@@ -13,9 +14,9 @@ def monteCarloPi(trials):
         rand_x = random.uniform(-1, 1)
         rand_y = random.uniform(-1, 1)
 
-        origin_dist = (rand_x**2 + rand_y**2)**0.5
+        origin_dist = (rand_x**2 + rand_y**2)
 
-        if origin_dist <= 1:
+        if origin_dist < 1:
             circle_points += 1
 
         square_points += 1
