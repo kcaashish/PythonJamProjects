@@ -25,7 +25,7 @@ def monteCarloPi(trials):
 
         calculated_pies.append(value_pi)
 
-    print(calculated_pies[-1])
+    print(sum(calculated_pies)/len(calculated_pies))
     error_in_pis = list()
 
     for pie in calculated_pies:
