@@ -45,7 +45,7 @@ def Fsum(x, n):
 	
 	else:
 		res = np.empty(x.shape, float)
-		rowarr = np.empty((0,x[0].size), float)
+		rowarr = np.empty((0, x[0].size), float)
 		for ind, Row in enumerate(x):
 			rowarr = np.empty((0, x[0].size), float)
 			for val in Row:
