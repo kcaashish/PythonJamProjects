@@ -82,7 +82,7 @@ def plotmicrocar(expectedList, actualList):
     expHorDisp, expVerDisp, actHorDisp, actVerDisp, expDist, actDist = microcar(expectedList, actualList)
 
     fig = plt.figure()
-    ax1 = fig.add_subplot(2, 1, 1)
+    ax1 = fig.add_subplot(2, 1, 1)  # (rows, columns, position in grid)
     ax2 = fig.add_subplot(2, 2, 3)
     ax3 = fig.add_subplot(2, 2, 4)
 
@@ -130,10 +130,10 @@ def plotmicrocar(expectedList, actualList):
 
 if __name__ == '__main__':
     a1, a2, a3, a4, a5, a6 = microcar(["data/expected1.csv", "data/expected2.csv"], ["data/actual1.csv", "data/actual2.csv"])
-    print(a1)
-    print(a2)
-    print(a3)
-    print(a4)
-    print(a5)
-    print(a6)
+    print("Expected horizontal displacement = ", a1)
+    print("Expected vertical displacement = ", a2)
+    print("Actual horizontal displacement = ", a3)
+    print("Actual vertical displacement = ", a4)
+    print("Expected distance = ", a5)
+    print("Actual distance = ", a6)
     plotmicrocar(["data/expected1.csv", "data/expected2.csv"], ["data/actual1.csv", "data/actual2.csv"])
